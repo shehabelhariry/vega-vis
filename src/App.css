@@ -1,33 +1,170 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
+.app-container {
+  display: grid;
+  grid-template-areas: 
+  "data  actions chart chart chart chart"
+  "data  actions chart chart chart chart"
+  "data  actions scripts scripts scripts scripts "
+  "data  actions scripts scripts scripts scripts"
+  "data  actions scripts scripts scripts scripts";
   min-height: 100vh;
+  text-align: center
+}
+
+.data-section-container {
+  grid-area: data;
+  background-color: #eaeaea;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.actions-section-container {
+  grid-area: actions;
+  background-color: snow;
+  padding: 10px;
+  padding-top: 0px;
+}
+
+.chart-section-container {
+  grid-area: chart;
+  background-color: rgb(230, 255, 250);
+  padding: 5px;
+}
+
+.scripts-section-container {
+  grid-area: scripts;
+  display: grid;
+  grid-template-areas: 
+  "sql  vega";
+}
+
+.vega-section-container {
+  grid-area: vega;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  max-height: 500px;
+  overflow-y: scroll;
+  text-align: left;
+}
+
+.sql-section-container {
+  grid-area: sql;
+  background-color: rgb(232, 233, 255);
+  padding: 5px;
+}
+
+.draggabale-attribute {
+  background: white;
+  text-align: left;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+  margin: 10px;
+  padding: 10px 20px;
+
+}
+
+.action-field {
+ margin-bottom: 20px;
+ text-align: left;
+}
+
+.action-field--select {
+  min-width: 200px;
+  background: white;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  padding: 5px;
+  outline: 0px;
+  margin-bottom: 5px;
+  display: block;
+  width: 100%;
+}
+
+.action-field--text {
+  border: none;
+  padding: 5px 10px;
+  min-width: 200px;
+  display: block;
+  margin-bottom: 5px;
+  border: 1px solid rgb(177, 177, 177)
+}
+
+.transform-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: #f4f6ff;
+  padding: 10px 0px;
+  text-align: left;
+}
+
+.transform-form .form-group {
+  text-align: left;
+  margin: 5px 8px;
+
+}
+
+.transform-form .form-group label{
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.transform-form .form-group input,
+.transform-form .form-group select
+{
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.button {
+  background: #4d4dcc;
+  padding: 10px;
   color: white;
+  border: 0px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  width: 100%;
+  -o-border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.button.link {
+  background: hsl(268, 71%, 32%);
+  width: 100px;
+  color: white;
+  border: 0px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  margin-left: calc(100% - 110px);
+  font-size: 12px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.applied-transform {
+  border: 0px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
